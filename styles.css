@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background: rgb(29, 29, 29);
+  }
+  .slider_container {
+    width: 50%;
+    height:auto;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 25%;
+    padding: 10px solid black;
+  }
+  .slider {
+    position: relative;
+    width: 400%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+  }
+  .slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+  .slide .caption {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    font-size: 5rem;
+    font-weight: 600;
+    color: white;
+    text-transform: capitalize;
+    background: rgba(0, 0, 0, 0.348);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5rem;
+    border-radius: 0 2rem 2rem 0;
+  }
+  .slide.one {
+    background: rgb(182, 19, 109);
+  }
+  .slide.two {
+    background: rgb(255, 64, 64);
+  }
+  .slide.three {
+    background: rgb(11, 173, 188);
+  }
+  .slide.four {
+    background: rgb(11, 188, 14);
+  }
+  .slide.five {
+    background: rgb(173, 11, 188);
+  }
+  @keyframes sliding {
+    0% {
+      transform: translateX(0%);
+    }
+    20% {
+      transform: translateX(0%);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    45% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-200%);
+    }
+    70% {
+      transform: translateX(-200%);
+    }
+    75% {
+      transform: translateX(-300%);
+    }
+    95% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(-400%);
+    }
+  }
+.sidebar{
+    width: 35%;
+    height: auto;
+    padding:20px;
+    border:2px solid white;
+    border-radius: 5%;
+  }
+  .sidenav {
+    margin-top:400px;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+    border-radius: 5%;
+    border:2px solid white;
+
+  
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .sidenav a:hover {
+    color: #064579;
+  }
+p{
+    padding:40px;
+    margin-left: 10%;
+}
+h1{
+  margin-left: 12.5%;
+}
+html{
+  scroll-behavior: smooth;
+}
