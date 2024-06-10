@@ -1,142 +1,166 @@
+/* Global Resets and Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  body {
-    width: 100%;
-    height: 100%;
-    background: rgb(29, 29, 29);
-  }
-  .slider_container {
-    width: 50%;
-    height:auto;
-    justify-content: flex-start;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    margin-left: 25%;
-    padding: 10px solid black;
-  }
-  .slider {
-    position: relative;
-    width: 400%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
-  }
-  .slide {
-    position: relative;
-    min-width: 100%;
-    height: 100%;
-  }
-  .slide img {
-    width: 100%;
-    height: 100%;
-  }
-  .slide .caption {
-    position: absolute;
-    left: 0;
-    bottom: 5%;
-    font-size: 5rem;
-    font-weight: 600;
-    color: white;
-    text-transform: capitalize;
-    background: rgba(0, 0, 0, 0.348);
-    backdrop-filter: blur(10px);
-    padding: 1rem 5rem;
-    border-radius: 0 2rem 2rem 0;
-  }
-  .slide.one {
-    background: rgb(182, 19, 109);
-  }
-  .slide.two {
-    background: rgb(255, 64, 64);
-  }
-  .slide.three {
-    background: rgb(11, 173, 188);
-  }
-  .slide.four {
-    background: rgb(11, 188, 14);
-  }
-  .slide.five {
-    background: rgb(173, 11, 188);
-  }
-  @keyframes sliding {
-    0% {
-      transform: translateX(0%);
-    }
-    20% {
-      transform: translateX(0%);
-    }
-    25% {
-      transform: translateX(-100%);
-    }
-    45% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(-200%);
-    }
-    70% {
-      transform: translateX(-200%);
-    }
-    75% {
-      transform: translateX(-300%);
-    }
-    95% {
-      transform: translateX(-300%);
-    }
-    100% {
-      transform: translateX(-400%);
-    }
-  }
-.sidebar{
-    width: 35%;
-    height: auto;
-    padding:20px;
-    border:2px solid white;
-    border-radius: 5%;
-  }
-  .sidenav {
-    margin-top:400px;
-    width: 150px;
-    position: fixed;
-    z-index: 1;
-    top: 20px;
-    left: 10px;
-    background: #eee;
-    overflow-x: hidden;
-    padding: 8px 0;
-    border-radius: 5%;
-    border:2px solid white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Default font */
+}
 
-  
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #2196F3;
-    display: block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .sidenav a:hover {
-    color: #064579;
-  }
-p{
-    padding:40px;
-    margin-left: 10%;
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
-h1{
-  margin-left: 12.5%;
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #00C9A7; /* Light green background */
+  color: #333; /* Dark text for contrast */
 }
-html{
-  scroll-behavior: smooth;
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Heading font */
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: 12.5%; /* Specific alignment for main heading */
+  animation: fadeIn 2s ease-in-out; /* Fade-in effect */
+}
+
+p {
+  padding: 2vw; /* Responsive padding */
+  margin-left: 10%; /* Consistent text alignment */
+}
+
+/* Interactive Elements */
+a:hover, .nav-link:hover, button:hover {
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+  color: #0056b3; /* Highlight color */
+}
+
+/* Slider Styles */
+.slider_container {
+  width:60%;
+  height: 40%;
+  margin: 0 auto; /* Center slider */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width:400%; /* Number of images * 100 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite; /* Continuous slide animation */
+}
+
+.slide {
+  width: 400;
+  position: relative;
+  min-width: 100%; /* Ensure each slide takes full container width */
+}
+
+.slide img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  /* Minimum width to prevent images from becoming too small */
+}
+
+
+.slide .caption {
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  font-size: 5rem; /* Large text for captions */
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.348); /* Semi-transparent background for readability */
+  backdrop-filter: blur(10px); /* Soften background image */
+  padding: 1rem 5rem;
+  border-radius: 0 2rem 2rem 0; /* Rounded corners on the right */
+}
+
+/* Sidebar Styles */
+.sidebar, .sidenav {
+  border: 2px solid white;
+  border-radius: 5%;
+}
+
+.sidebar {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+}
+
+.sidenav {
+  width: 150px; /* Default width */
+  position: fixed;
+  z-index: 1;
+  top: 20%;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+  border-radius: 5%;
+  border: 2px solid white;
+  font-size: 25px; /* Large font size for visibility */
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #2196F3; /* Blue color for links */
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidenav {
+    width: 100%; /* Full width on smaller screens */
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    position: static; /* Static position for inline flow */
+    margin-top: 0; /* Reset margin */
+  }
+}
+
+/* Content & Footer Styles */
+.content {
+  background-color: #f8f9fa; /* Light grey background for content */
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%; /* Responsive width */
+}
+
+footer {
+  background-color: #007bff; /* Blue background for footer */
+  color: white;
+  padding: 1rem 0;
+  width: 100%; /* Full width */
+  text-align: center; /* Center-align footer text */
+}
+
+/* Button Hover Effect */
+button:hover {
+  transform: scale(1.05); /* Slightly enlarge buttons on hover */
+  transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+
+/* Hero Section Gradient */
+.hero-section {
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Orange to peach gradient */
+}
+
+/* Animation Keyframes */
+@keyframes sliding {
+  0%, 20%, 100% { transform: translateX(0%); }
+  25%, 45% { transform: translateX(-100%); }
+  50%, 70% { transform: translateX(-200%); }
+  75%, 95% { transform: translateX(-300%); }
 }
